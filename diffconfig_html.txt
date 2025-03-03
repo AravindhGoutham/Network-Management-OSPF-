@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configuration Differences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            white-space: pre-wrap;
+        }
+        .old-config { color: red; font-weight: bold; }
+        .new-config { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Configuration Differences</h1>
+
+    {% for router, result in results.items() %}
+        <h2>{{ router }}</h2>
+        <pre>
+{% if result|length == 1 and "No changes" in result[0] %}
+    {{ result[0] }}
+{% else %}
+    {% for line in result %}
+        {% if "OLD CONFIG:" in line %}
+            <span class="old-config">{{ line }}</span>
+        {% elif "NEW CONFIG:" in line %}
+            <span class="new-config">{{ line }}</span>
+        {% else %}
+            {{ line }}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+        </pre>
+    {% endfor %}
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
