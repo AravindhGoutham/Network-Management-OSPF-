@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrieved Configurations</title>
+</head>
+<body>
+    <h1>Retrieved Configurations</h1>
+    <ul>
+        {% if files %}
+            {% for file in files %}
+                <li><a href="{{ url_for('download_file', filename=file) }}" target="_blank">{{ file }}</a></li>
+            {% endfor %}
+        {% else %}
+            <p>No configuration files found.</p>
+        {% endif %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

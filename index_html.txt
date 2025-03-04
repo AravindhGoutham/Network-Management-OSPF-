@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Automation LAB II</title>
+</head>
+<body>
+    <h1>Network Automation LAB II</h1>
+    
+    <ul>
+        <li><a href="/getconfig">Get Config</a></li>
+        <li><a href="/ospfconfig">OSPF Config</a></li>
+        <li><a href="/pingtest">Ping Test for Loopback</a></li>
+        <li><a href="/diffconfig">Diff Config</a></li>
+    </ul>
+</body>
+</html>
